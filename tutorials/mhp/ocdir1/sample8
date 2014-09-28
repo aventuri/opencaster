@@ -1,0 +1,7 @@
+1.Video = 440,80,180,144
+1.Input = 170,150,20,0xFF0000,0xFFFFFF,False,var,file:///sample8,1
+1.PadHelp = 200, 270
+1.Text.1 = True, 90, 523, 25, 0x000000, Exit
+1.Text.2 = True, 87, 520, 25, 0xFFFFFF, Exit
+1.Graphic.1 = True,52, 494, True, file:///redb.jpg
+1.RedKey = exit://, 1

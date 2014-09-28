@@ -1,0 +1,25 @@
+OpenCaster
+
+Lorenzo Pallara l.pallara@avalpa.com
+=============================
+
+==How to compile and install==
+
+The procedure is tested on a Debian Linux 7.0 i686 32bit architecture, it is reported to work also on 32bit armhf architecure.
+Packages usually required but not installed by default are:
+binutils, gcc, libc6-dev, libgomp1, linux-libc-dev, make, python-dev, and zlib1g-dev, these are mostly development libraries needed to compile OpenCaster.
+You can install/upgrade/verify the packages typing as root on a Debian with the following command:
+
+apt-get install --no-install-recommends binutils gcc libc6-dev libgomp1 linux-libc-dev make python-dev zlib1g-dev python-dateutil
+
+To build the package you need to type 
+
+make 
+
+into OpenCaster directory.
+To install the tools in the system you need to type 
+
+make install 
+
+with root privileges.
+

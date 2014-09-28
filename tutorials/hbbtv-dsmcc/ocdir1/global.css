@@ -1,0 +1,13 @@
+@CHARSET "UTF8";
+
+body {
+	padding: 36px 128px; 
+	height: 648px; 
+	width: 1024px;
+	background-color: #AAAAAA;
+	}
+	
+a:focus {
+	background-color: lightgreen;
+}
+

@@ -1,0 +1,2241 @@
+
+starting pid 59, tty '': '/bin/sh'
+
+
+BusyBox v1.7.2 (2009-05-13 17:54:10 CEST) built-in shell (ash)
+Enter 'help' for a list of built-in commands.
+
+~ > / mount d /de~ > mount /dev/[Jhd  [5D~ > mount /dev/[J
+/dev/adec_ac3    /dev/full        /dev/port        /dev/stbgfx
+/dev/adec_dev    /dev/i2c/        /dev/ppp         /dev/tts/
+/dev/adec_dts    /dev/ide/        /dev/ptmx        /dev/ttx0
+/dev/adec_lpcm   /dev/input/      /dev/pts/        /dev/tty
+/dev/adec_mixer  /dev/kmem        /dev/pty/        /dev/urandom
+/dev/adec_mpg    /dev/kmsg        /dev/pvr         /dev/vc/
+/dev/adec_pcm    /dev/loop/       /dev/random      /dev/vcc/
+/dev/aud_mpeg    /dev/mem         /dev/root        /dev/vdec_dev
+/dev/console     /dev/misc/       /dev/sci0        /dev/vid
+/dev/demuxapi    /dev/mmc/        /dev/sci1        /dev/zero
+/dev/demuxapi0   /dev/mtd/        /dev/scsi/
+/dev/discs/      /dev/mtdblock/   /dev/shm/
+/dev/fb/         /dev/null        /dev/sound/
+~ > mount /dev/[Jsc[7D~ > mount /dev/sc[J
+/dev/sci0   /dev/sci1   /dev/scsi/
+~ > mount /dev/sc[J
+/dev/sci0   /dev/sci1   /dev/scsi/
+~ > mount /dev/sc[Js[8D~ > mount /dev/scsi/[J[10D~ > mount /dev/scsi/host0/[J[16D~ > mount /dev/scsi/host0/bus0/[J[21D~ > mount /dev/scsi/host0/bus0/target0/[J[29D~ > mount /dev/scsi/host0/bus0/target0/lun0/[J[34D~ > mount /dev/scsi/host0/bus0/target0/lun0/[J
+/dev/scsi/host0/bus0/target0/lun0/disc
+/dev/scsi/host0/bus0/target0/lun0/part1
+~ > mount /dev/scsi/host0/bus0/target0/lun0/[J
+/dev/scsi/host0/bus0/target0/lun0/disc
+/dev/scsi/host0/bus0/target0/lun0/part1
+~ > mount /dev/scsi/host0/bus0/target0/lun0/[Jp[35D~ > mount /dev/scsi/host0/bus0/target0/lun0/part1 [J/h~ > mount /dev/scsi/host0/bus0/target0/lun0/part1 /hdd/[J
+EXT2-fs warning: mounting unchecked fs, running e2fsck is recommended
+~ > dmesg
+Linux version 2.6.17-cubecafe-prime (lorenzo@nb-lpallara) (gcc version 3.4.4) #3 Thu May 14 14:52:05 CEST 2009
+relook210 (CubeCaFe-prime) DGStation Co. http://www.dgstation.co.kr
+On node 0 totalpages: 7168
+  DMA zone: 7168 pages, LIFO batch:0
+Built 1 zonelists
+Kernel command line: console=ttyS0,115200 root=/dev/mtdblock2 panic=1 mem=28M videofmt=pal
+PID hash table entries: 128 (order: 7, 512 bytes)
+Console: colour dummy device 80x25
+Dentry cache hash table entries: 4096 (order: 2, 16384 bytes)
+Inode-cache hash table entries: 2048 (order: 1, 8192 bytes)
+Memory: 25372k available (2204k kernel code, 744k data, 92k init, 0k highmem)
+Calibrating delay loop... 251.39 BogoMIPS (lpj=502784)
+Mount-cache hash table entries: 512
+NET: Registered protocol family 16
+NET: Registered protocol family 2
+IP route cache hash table entries: 256 (order: -2, 1024 bytes)
+TCP established hash table entries: 1024 (order: 0, 4096 bytes)
+TCP bind hash table entries: 512 (order: -1, 2048 bytes)
+TCP: Hash tables configured (established 1024 bind 512)
+TCP reno registered
+squashfs: version 3.1 + autolzma (2006/10/05) Phillip Lougher
+devfs: 2004-01-31 Richard Gooch (rgooch@atnf.csiro.au)
+devfs: boot_options: 0x1
+JFFS2 version 2.2. (NAND) (C) 2001-2003 Red Hat, Inc.
+Initializing Cryptographic API
+io scheduler noop registered (default)
+IBM GPIO driver version 07.25.02
+IBM GPIO driver version 07.25.02
+GPIO #0 at 0xc205e000
+Serial: 8250/16550 driver $Revision: 1.90 $ 3 ports, IRQ sharing disabled
+serial8250: ttyS0 at MMIO 0x0 (irq = 20) is a 16550A
+serial8250: ttyS1 at MMIO 0x0 (irq = 21) is a 16550A
+serial8250: ttyS2 at MMIO 0x0 (irq = 22) is a 16550A
+loop: loaded (max 8 devices)
+PPP generic driver version 2.4.2
+PPP Deflate Compression module registered
+PPP BSD Compression module registered
+NET: Registered protocol family 24
+dm9000 Ethernet Driver
+dm9000: 16 bit io datasize.
+dm9000: Invalid ethernet MAC address feched from srom, tring bios
+eth0: dm9000 at c2060000,c2062004 IRQ 26 MAC: 00:13:18:02:04:07
+Uniform Multi-Platform E-IDE driver Revision: 7.00alpha2
+ide: Assuming 50MHz system bus speed for PIO modes; override with idebus=xx
+IBM Redwood 4/6 IDE driver version 2.1 S
+detected IOADDR: f2000000/f4000000
+DMA addr: fce00000
+using irq 25
+Probing IDE interface ide0...
+hda: probing with STATUS(0x50) instead of ALTSTATUS(0x00)
+hda: QUANTUM FIREBALLP AS20.5, ATA DISK drive
+hdb: probing with STATUS(0x00) instead of ALTSTATUS(0x08)
+hda: use pio mode 4
+ide0 at 0xc2064000-0xc2064007,0xc2066000 on irq 25
+hda: max request size: 128KiB
+hda: 40132503 sectors (20547 MB) w/1902KiB Cache, CHS=39813/16/63, (U)DMA
+hda: cache flushes not supported
+ /dev/ide/host0/bus0/target0/lun0: p1
+relook: flash mapping: 800000 at ff800000
+DGStation relook210: Found 1 x16 devices at 0x0 in 16-bit bank
+ Amd/Fujitsu Extended Query Table at 0x0040
+number of CFI chips: 1
+cfi_cmdset_0002: Disabling erase-suspend-program due to code brokenness.
+Creating 9 MTD partitions on "DGStation relook210":
+0x00000000-0x00040000 : "nor.config_welcome"
+0x00620000-0x007d0000 : "nor.db"
+0x00190000-0x00620000 : "nor.root"
+0x00040000-0x00190000 : "nor.kernel"
+0x007d0000-0x00800000 : "nor.boot"
+0x00040000-0x00620000 : "nor.kernel_root"
+0x00040000-0x007d0000 : "nor.kernel_root_db"
+0x00000000-0x007d0000 : "nor.all_noboot"
+0x00000000-0x00800000 : "nor.all"
+i2c /dev entries driver
+IBM IIC driver v2.1
+ibm-iic0: using standard (100 kHz) mode
+TCP bic registered
+NET: Registered protocol family 1
+NET: Registered protocol family 17
+SQUASHFS error: zlib_fs returned unexpected result 0xfffffffd
+SQUASHFS error: zlib_fs Failed!! trying to lzma
+
+VFS: Mounted root (squashfs filesystem) readonly.
+Mounted devfs on /dev
+Freeing unused kernel memory: 92k init
+eth0: link down
+eth0: link up, 100Mbps, full-duplex, lpa 0xC5E1
+SCSI subsystem initialized
+usbcore: registered new driver usbfs
+usbcore: registered new driver hub
+116x: driver isp116x-hcd, 03 Nov 2005
+isp116x-hcd isp116x-hcd.0: ISP116x Host Controller
+isp116x-hcd isp116x-hcd.0: new USB bus registered, assigned bus number 1
+isp116x-hcd isp116x-hcd.0: irq 27, io base 0xfa000004
+usb usb1: configuration #1 chosen from 1 choice
+hub 1-0:1.0: USB hub found
+hub 1-0:1.0: 1 port detected
+Initializing USB Mass Storage driver...
+usbcore: registered new driver usb-storage
+USB Mass Storage support registered.
+usbcore: registered new driver hiddev
+usbcore: registered new driver usbhid
+drivers/usb/input/hid-core.c: v2.6:USB HID core driver
+front: no version magic, tainting kernel.
+front: module license 'unspecified' taints kernel.
+micom 7seg driver $Revision: 1.0 $
+EXT2-fs warning: mounting unchecked fs, running e2fsck is recommended
+STBx25xx OS-Core 1.5-Feb/16/2004@Feb/16/2004 Built Jun 29 2009/15:45:52 for 2.6.17-cubecafe-prime
+STBx25xx AV 1.5-Feb/16/2004@Feb/16/2004 Built Jun 29 2009/15:45:49 for 2.6.17-cubecafe-prime
+audio microcode s5amp3 ver 3.18
+STBx25xx/03xxx GFX 1.5-Feb/16/2004@Feb/16/2004 Built Jun 29 2009/15:45:52 for 2.6.17-cubecafe-prime
+usb 1-1: new full speed USB device using isp116x-hcd and address 2
+usb 1-1: configuration #1 chosen from 1 choice
+scsi0 : SCSI emulation for USB Mass Storage devices
+usb-storage: device found at 2
+usb-storage: waiting for device to settle before scanning
+input: front_drv as /class/input/input0
+  Vendor: WD        Model: 2500BEV External  Rev: 1.05
+  Type:   Direct-Access                      ANSI SCSI revision: 04
+SCSI device sda: 488397168 512-byte hdwr sectors (250059 MB)
+sda: Write Protect is off
+sda: Mode Sense: 21 00 00 00
+sda: assuming drive cache: write through
+SCSI device sda: 488397168 512-byte hdwr sectors (250059 MB)
+sda: Write Protect is off
+sda: Mode Sense: 21 00 00 00
+sda: assuming drive cache: write through
+ /dev/scsi/host0/bus0/target0/lun0: p1
+sd 0:0:0:0: Attached scsi disk sda
+usb-storage: device scan complete
+Ver. 7.4.24(1)
+EXT2-fs warning: mounting unchecked fs, running e2fsck is recommended
+~ > dmesg
+Linux version 2.6.17-cubecafe-prime (lorenzo@nb-lpallara) (gcc version 3.4.4) #3 Thu May 14 14:52:05 CEST 2009
+relook210 (CubeCaFe-prime) DGStation Co. http://www.dgstation.co.kr
+On node 0 totalpages: 7168
+  DMA zone: 7168 pages, LIFO batch:0
+Built 1 zonelists
+Kernel command line: console=ttyS0,115200 root=/dev/mtdblock2 panic=1 mem=28M videofmt=pal
+PID hash table entries: 128 (order: 7, 512 bytes)
+Console: colour dummy device 80x25
+Dentry cache hash table entries: 4096 (order: 2, 16384 bytes)
+Inode-cache hash table entries: 2048 (order: 1, 8192 bytes)
+Memory: 25372k available (2204k kernel code, 744k data, 92k init, 0k highmem)
+Calibrating delay loop... 251.39 BogoMIPS (lpj=502784)
+Mount-cache hash table entries: 512
+NET: Registered protocol family 16
+NET: Registered protocol family 2
+IP route cache hash table entries: 256 (order: -2, 1024 bytes)
+TCP established hash table entries: 1024 (order: 0, 4096 bytes)
+TCP bind hash table entries: 512 (order: -1, 2048 bytes)
+TCP: Hash tables configured (established 1024 bind 512)
+TCP reno registered
+squashfs: version 3.1 + autolzma (2006/10/05) Phillip Lougher
+devfs: 2004-01-31 Richard Gooch (rgooch@atnf.csiro.au)
+devfs: boot_options: 0x1
+JFFS2 version 2.2. (NAND) (C) 2001-2003 Red Hat, Inc.
+Initializing Cryptographic API
+io scheduler noop registered (default)
+IBM GPIO driver version 07.25.02
+IBM GPIO driver version 07.25.02
+GPIO #0 at 0xc205e000
+Serial: 8250/16550 driver $Revision: 1.90 $ 3 ports, IRQ sharing disabled
+serial8250: ttyS0 at MMIO 0x0 (irq = 20) is a 16550A
+serial8250: ttyS1 at MMIO 0x0 (irq = 21) is a 16550A
+serial8250: ttyS2 at MMIO 0x0 (irq = 22) is a 16550A
+loop: loaded (max 8 devices)
+PPP generic driver version 2.4.2
+PPP Deflate Compression module registered
+PPP BSD Compression module registered
+NET: Registered protocol family 24
+dm9000 Ethernet Driver
+dm9000: 16 bit io datasize.
+dm9000: Invalid ethernet MAC address feched from srom, tring bios
+eth0: dm9000 at c2060000,c2062004 IRQ 26 MAC: 00:13:18:02:04:07
+Uniform Multi-Platform E-IDE driver Revision: 7.00alpha2
+ide: Assuming 50MHz system bus speed for PIO modes; override with idebus=xx
+IBM Redwood 4/6 IDE driver version 2.1 S
+detected IOADDR: f2000000/f4000000
+DMA addr: fce00000
+using irq 25
+Probing IDE interface ide0...
+hda: probing with STATUS(0x50) instead of ALTSTATUS(0x00)
+hda: QUANTUM FIREBALLP AS20.5, ATA DISK drive
+hdb: probing with STATUS(0x00) instead of ALTSTATUS(0x08)
+hda: use pio mode 4
+ide0 at 0xc2064000-0xc2064007,0xc2066000 on irq 25
+hda: max request size: 128KiB
+hda: 40132503 sectors (20547 MB) w/1902KiB Cache, CHS=39813/16/63, (U)DMA
+hda: cache flushes not supported
+ /dev/ide/host0/bus0/target0/lun0: p1
+relook: flash mapping: 800000 at ff800000
+DGStation relook210: Found 1 x16 devices at 0x0 in 16-bit bank
+ Amd/Fujitsu Extended Query Table at 0x0040
+number of CFI chips: 1
+cfi_cmdset_0002: Disabling erase-suspend-program due to code brokenness.
+Creating 9 MTD partitions on "DGStation relook210":
+0x00000000-0x00040000 : "nor.config_welcome"
+0x00620000-0x007d0000 : "nor.db"
+0x00190000-0x00620000 : "nor.root"
+0x00040000-0x00190000 : "nor.kernel"
+0x007d0000-0x00800000 : "nor.boot"
+0x00040000-0x00620000 : "nor.kernel_root"
+0x00040000-0x007d0000 : "nor.kernel_root_db"
+0x00000000-0x007d0000 : "nor.all_noboot"
+0x00000000-0x00800000 : "nor.all"
+i2c /dev entries driver
+IBM IIC driver v2.1
+ibm-iic0: using standard (100 kHz) mode
+TCP bic registered
+NET: Registered protocol family 1
+NET: Registered protocol family 17
+SQUASHFS error: zlib_fs returned unexpected result 0xfffffffd
+SQUASHFS error: zlib_fs Failed!! trying to lzma
+
+VFS: Mounted root (squashfs filesystem) readonly.
+Mounted devfs on /dev
+Freeing unused kernel memory: 92k init
+eth0: link down
+eth0: link up, 100Mbps, full-duplex, lpa 0xC5E1
+SCSI subsystem initialized
+usbcore: registered new driver usbfs
+usbcore: registered new driver hub
+116x: driver isp116x-hcd, 03 Nov 2005
+isp116x-hcd isp116x-hcd.0: ISP116x Host Controller
+isp116x-hcd isp116x-hcd.0: new USB bus registered, assigned bus number 1
+isp116x-hcd isp116x-hcd.0: irq 27, io base 0xfa000004
+usb usb1: configuration #1 chosen from 1 choice
+hub 1-0:1.0: USB hub found
+hub 1-0:1.0: 1 port detected
+Initializing USB Mass Storage driver...
+usbcore: registered new driver usb-storage
+USB Mass Storage support registered.
+usbcore: registered new driver hiddev
+usbcore: registered new driver usbhid
+drivers/usb/input/hid-core.c: v2.6:USB HID core driver
+front: no version magic, tainting kernel.
+front: module license 'unspecified' taints kernel.
+micom 7seg driver $Revision: 1.0 $
+EXT2-fs warning: mounting unchecked fs, running e2fsck is recommended
+STBx25xx OS-Core 1.5-Feb/16/2004@Feb/16/2004 Built Jun 29 2009/15:45:52 for 2.6.17-cubecafe-prime
+STBx25xx AV 1.5-Feb/16/2004@Feb/16/2004 Built Jun 29 2009/15:45:49 for 2.6.17-cubecafe-prime
+audio microcode s5amp3 ver 3.18
+STBx25xx/03xxx GFX 1.5-Feb/16/2004@Feb/16/2004 Built Jun 29 2009/15:45:52 for 2.6.17-cubecafe-prime
+usb 1-1: new full speed USB device using isp116x-hcd and address 2
+usb 1-1: configuration #1 chosen from 1 choice
+scsi0 : SCSI emulation for USB Mass Storage devices
+usb-storage: device found at 2
+usb-storage: waiting for device to settle before scanning
+input: front_drv as /class/input/input0
+  Vendor: WD        Model: 2500BEV External  Rev: 1.05
+  Type:   Direct-Access                      ANSI SCSI revision: 04
+SCSI device sda: 488397168 512-byte hdwr sectors (250059 MB)
+sda: Write Protect is off
+sda: Mode Sense: 21 00 00 00
+sda: assuming drive cache: write through
+SCSI device sda: 488397168 512-byte hdwr sectors (250059 MB)
+sda: Write Protect is off
+sda: Mode Sense: 21 00 00 00
+sda: assuming drive cache: write through
+ /dev/scsi/host0/bus0/target0/lun0: p1
+sd 0:0:0:0: Attached scsi disk sda
+usb-storage: device scan complete
+Ver. 7.4.24(1)
+EXT2-fs warning: mounting unchecked fs, running e2fsck is recommended
+~ > ps
+  PID  Uid        VSZ Stat Command
+    1 root       1856 S   init       
+    2 root            SWN [ksoftirqd/0]
+    3 root            SW  [watchdog/0]
+    4 root            SW< [events/0]
+    5 root            SW< [khelper]
+    6 root            SW< [kthread]
+    7 root            SW< [kblockd/0]
+    8 root            SW  [pdflush]
+    9 root            SW  [pdflush]
+   10 root            SW  [kswapd0]
+   11 root            SW< [aio/0]
+   12 root            SW< [cifsoplockd]
+   13 root            SW< [cifsdnotifyd]
+   14 root            SW  [mtdblockd]
+   23 root            SWN [jffs2_gcd_mtd1]
+   34 root       1860 S   /sbin/udhcpc -b -s /share/udhcpc/default.script 
+   39 root            SW< [khubd]
+   47 root       1956 S   /sbin/inetd 
+   53 root       1860 S   /sbin/zcip eth0 /var/etc/zcip.script 
+   56 root       1712 S   /bin/btpd -d /tmp/btpd 
+   57 root       1856 S   /bin/sh /var/launch 
+   59 root       1960 S   -sh 
+   65 root      88524 S   /bin/cvm -cp /var/jet:/jet -Djava.library.path=/var/j
+   66 root            SW< [scsi_eh_0]
+   67 root            SW< [usb-storage]
+   86 root       1960 R   ps 
+~ > java.io.FileNotFoundException: /var/jet/lnb (No such file or directory)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at StbUtil.readOneLine(Unknown Source)
+	at LNBConfig.load(Unknown Source)
+	at StbMain.main(Unknown Source)
+	at sun.misc.CVM.runMain(Unknown Source)
+java.lang.NumberFormatException: null
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at LNBConfig.load(Unknown Source)
+	at StbMain.main(Unknown Source)
+	at sun.misc.CVM.runMain(Unknown Source)
+frequency 610000
+tsrunner playback stopped by the user
+info: pvr done
+TxtMonitor started
+Txtpid is 202
+subtitle magazine is 8, row is 0, pts from header is 2750814250
+STC is 2750741274
+PTS is 2750814250
+diff is 72976
+subtitle magazine is 8, row is 20, pts from header is -1
+subtitle text is       Volvemos a la mesa de trabajo     
+subtitle magazine is 8, row is 22, pts from header is -1
+subtitle text is             para descubrir...           
+STC is 2750756340
+PTS is -1
+diff is -2750756341
+paint TXTComponent
+
+            para descubrir...           
+paint TXTComponent
+
+STC is 2750884636
+PTS is 2750893450
+diff is 8814
+paint TXTComponent
+
+STC is 2750984644
+PTS is 2750990650
+diff is 6006
+paint TXTComponent
+
+tsrunner playback stopped by the user
+info: pvr done
+paint TXTComponent
+
+
+~ > killall cvm
+Terminated
+~ > Graphic init.
+check command liinput: front_drv as /class/input/input1
+ne for serial ttyS2 console=ttyS0,115200 root=/dev/mtdblock2 panic=1 mem=28M videofmt=pal
+Ôinit. the front panel
+Graphic init done
+java.io.FileNotFoundException: /var/jet/lnb (No such file or directory)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at StbUtil.readOneLine(Unknown Source)
+	at LNBConfig.load(Unknown Source)
+	at StbMain.main(Unknown Source)
+	at sun.misc.CVM.runMain(Unknown Source)
+java.lang.NumberFormatException: null
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at LNBConfig.load(Unknown Source)
+	at StbMain.main(Unknown Source)
+	at sun.misc.CVM.runMain(Unknown Source)
+frequency 610000
+
+~ > ~ > killall cvm[J~ > ps[J~ > killall cvm[J
+~ > Terminated
+Graphic init.
+check command liinput: front_drv as /class/input/input2
+ne for serial ttyS2 console=ttyS0,115200 root=/dev/mtdblock2 panic=1 mem=28M videofmt=pal
+Ôinit. the front panel
+Graphic init done
+java.io.FileNotFoundException: /var/jet/lnb (No such file or directory)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at StbUtil.readOneLine(Unknown Source)
+	at LNBConfig.load(Unknown Source)
+	at StbMain.main(Unknown Source)
+	at sun.misc.CVM.runMain(Unknown Source)
+java.lang.NumberFormatException: null
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at LNBConfig.load(Unknown Source)
+	at StbMain.main(Unknown Source)
+	at sun.misc.CVM.runMain(Unknown Source)
+frequency 610000
+frequency 610000
+tsrunner playback stopped by the user
+info: pvr done
+TxtMonitor started
+Txtpid is 202
+read 368 pes bytes
+pes packet length is 1048576
+read 552 pes bytes
+read 368 pes bytes
+read 1288 pes bytes
+read 552 pes bytes
+read 736 pes bytes
+read 1840 pes bytes
+read 184 pes bytes
+read 552 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 552 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+read 920 pes bytes
+pes packet length is 1048576
+read 3128 pes bytes
+read 2024 pes bytes
+read 1656 pes bytes
+read 2208 pes bytes
+pes packet length is 1048576
+read 736 pes bytes
+pes packet length is 1048576
+read 736 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 552 pes bytes
+read 920 pes bytes
+read 2576 pes bytes
+read 1288 pes bytes
+pes packet length is 1048576
+read 3312 pes bytes
+read 2024 pes bytes
+read 920 pes bytes
+pes packet length is 1048576
+read 736 pes bytes
+read 184 pes bytes
+read 552 pes bytes
+read 184 pes bytes
+read 736 pes bytes
+read 368 pes bytes
+pes packet length is 1048576
+read 920 pes bytes
+read 1656 pes bytes
+read 1288 pes bytes
+read 2576 pes bytes
+read 2208 pes bytes
+read 1104 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1048576
+read 368 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1048576
+read 1104 pes bytes
+read 552 pes bytes
+read 2760 pes bytes
+read 1472 pes bytes
+read 2392 pes bytes
+read 2208 pes bytes
+read 552 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 552 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1048576
+read 920 pes bytes
+read 1288 pes bytes
+read 2024 pes bytes
+read 1656 pes bytes
+read 1656 pes bytes
+read 2024 pes bytes
+read 1288 pes bytes
+pes packet length is 1048576
+read 1104 pes bytes
+subtitle magazine is 8, row is 0, pts from header is 2750807050
+read 1104 pes bytes
+subtitle magazine is 8, row is 20, pts from header is 2750807050
+subtitle text is       Volvemos a la mesa de trabajo     
+subtitle magazine is 8, row is 22, pts from header is 2750807050
+subtitle text is             para descubrir...           
+read 4096 pes bytes
+read 2160 pes bytes
+read 552 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1048576
+read 368 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1048576
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1048576
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+pes packet length is 1048576
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1048576
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1048576
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+pes packet length is 1048576
+read 368 pes bytes
+read 184 pes bytes
+read 552 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 920 pes bytes
+read 552 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1048576
+read 184 pes bytes
+read 184 pes bytes
+read 552 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+pes packet length is 1048576
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 552 pes bytes
+pes packet length is 1048576
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1048576
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 552 pes bytes
+pes packet length is 1048576
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1048576
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1048576
+read 184 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+pes packet length is 1048576
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1048576
+read 368 pes bytes
+read 552 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1048576
+read 184 pes bytes
+read 184 pes bytes
+read 552 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+pes packet length is 1048576
+read 368 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1048576
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+pes packet length is 1048576
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+pes packet length is 1048576
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1048576
+read 552 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1048576
+read 184 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1048576
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1048576
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1048576
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1048576
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1048576
+read 368 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1048576
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1048576
+read 552 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 552 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1048576
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 552 pes bytes
+pes packet length is 1048576
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1048576
+read 552 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1048576
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+pes packet length is 1048576
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1048576
+read 184 pes bytes
+read 552 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1048576
+read 1656 pes bytes
+read 736 pes bytes
+read 368 pes bytes
+read 920 pes bytes
+read 1288 pes bytes
+read 552 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 736 pes bytes
+pes packet length is 1048576
+read 552 pes bytes
+read 736 pes bytes
+read 920 pes bytes
+read 1288 pes bytes
+read 184 pes bytes
+read 1472 pes bytes
+pes packet length is 1048576
+read 2392 pes bytes
+read 1472 pes bytes
+subtitle magazine is 8, row is 0, pts from header is 2751087850
+read 2024 pes bytes
+read 552 pes bytes
+read 184 pes bytes
+read 552 pes bytes
+read 368 pes bytes
+subtitle magazine is 8, row is 0, pts from header is 2751087850
+read 2208 pes bytes
+subtitle magazine is 8, row is 20, pts from header is 2751087850
+subtitle text is     ...c^mo sobrevivi^ el Triceratops   
+subtitle magazine is 8, row is 22, pts from header is 2751087850
+subtitle text is     al ataque del Tyrannosaurus rex.    
+read 1288 pes bytes
+read 368 pes bytes
+read 1656 pes bytes
+read 1288 pes bytes
+read 1288 pes bytes
+read 1840 pes bytes
+read 1472 pes bytes
+read 736 pes bytes
+read 368 pes bytes
+read 552 pes bytes
+read 184 pes bytes
+pes packet length is 1048576
+read 1288 pes bytes
+read 736 pes bytes
+read 736 pes bytes
+pes packet length is 1048576
+read 368 pes bytes
+read 1656 pes bytes
+pes packet length is 1048576
+read 2576 pes bytes
+read 2024 pes bytes
+read 1656 pes bytes
+read 552 pes bytes
+read 736 pes bytes
+read 920 pes bytes
+read 552 pes bytes
+read 368 pes bytes
+read 1104 pes bytes
+pes packet length is 1048576
+read 920 pes bytes
+pes packet length is 1048576
+read 368 pes bytes
+read 552 pes bytes
+read 1840 pes bytes
+read 1288 pes bytes
+read 920 pes bytes
+read 1104 pes bytes
+read 552 pes bytes
+read 184 pes bytes
+read 1104 pes bytes
+pes packet length is 1048576
+read 1288 pes bytes
+pes packet length is 1048576
+read 920 pes bytes
+read 368 pes bytes
+pes packet length is 1048576
+read 368 pes bytes
+read 368 pes bytes
+read 920 pes bytes
+pes packet length is 1048576
+read 2392 pes bytes
+read 736 pes bytes
+pes packet length is 1048576
+read 1840 pes bytes
+read 184 pes bytes
+read 736 pes bytes
+read 1288 pes bytes
+read 1288 pes bytes
+read 1288 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+pes packet length is 1048576
+
+~ > read 368 pes bytes
+read 184 pes bytes
+read 552 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 1288 pes bytes
+pes packet length is 1048576
+read 736 pes bytes
+read 368 pes bytes
+read 736 pes bytes
+read 1472 pes bytes
+read 736 pes bytes
+read 552 pes bytes
+read 1656 pes bytes
+read 920 pes bytes
+read 368 pes bytes
+read 1104 pes bytes
+pes packet length is 1048576
+read 2392 pes bytes
+pes packet length is 1048576
+read 1104 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 1472 pes bytes
+pes packet length is 1048576
+read 1840 pes bytes
+read 1288 pes bytes
+pes packet length is 1048576
+read 1288 pes bytes
+read 368 pes bytes
+read 736 pes bytes
+read 920 pes bytes
+read 2024 pes bytes
+read 1104 pes bytes
+pes packet length is 1048576
+read 736 pes bytes
+pes packet length is 1048576
+read 368 pes bytes
+read 368 pes bytes
+pes packet length is 1048576
+read 920 pes bytes
+read 736 pes bytes
+read 920 pes bytes
+read 1288 pes bytes
+read 368 pes bytes
+read 920 pes bytes
+read 1472 pes bytes
+pes packet length is 1048576
+read 2392 pes bytes
+read 2024 pes bytes
+read 736 pes bytes
+read 368 pes bytes
+pes packet length is 1048576
+read 736 pes bytes
+read 736 pes bytes
+pes packet length is 1048576
+read 1472 pes bytes
+read 1656 pes bytes
+pes packet length is 1048576
+read 184 pes bytes
+read 736 pes bytes
+read 1288 pes bytes
+read 2024 pes bytes
+read 1288 pes bytes
+read 1840 pes bytes
+read 184 pes bytes
+tsrunner playback stopped by the user
+info: pvr done
+paint TXTComponent
+
+~ > killall cvm[J~ > killall cvm[J
+Terminated
+~ > Graphic init.
+check command liinput: front_drv as /class/input/input3
+ne for serial ttyS2 console=ttyS0,115200 root=/dev/mtdblock2 panic=1 mem=28M videofmt=pal
+Ôinit. the front panel
+Graphic init done
+java.io.FileNotFoundException: /var/jet/lnb (No such file or directory)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at StbUtil.readOneLine(Unknown Source)
+	at LNBConfig.load(Unknown Source)
+	at StbMain.main(Unknown Source)
+	at sun.misc.CVM.runMain(Unknown Source)
+java.lang.NumberFormatException: null
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at LNBConfig.load(Unknown Source)
+	at StbMain.main(Unknown Source)
+	at sun.misc.CVM.runMain(Unknown Source)
+frequency 610000
+tsrunner playback stopped by the user
+info: pvr done
+TxtMonitor started
+Txtpid is 202
+read 368 pes bytes
+byte 4 is 4byte 5 is 74
+pes packet length is 1098
+read 920 pes bytes
+read 1288 pes bytes
+read 552 pes bytes
+read 1656 pes bytes
+read 1104 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 552 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 736 pes bytes
+byte 4 is 4byte 5 is 74
+pes packet length is 1098
+read 2208 pes bytes
+read 2208 pes bytes
+read 1472 pes bytes
+read 1840 pes bytes
+byte 4 is 4byte 5 is 74
+pes packet length is 1098
+read 3128 pes bytes
+read 736 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 552 pes bytes
+read 920 pes bytes
+read 2944 pes bytes
+read 920 pes bytes
+read 2576 pes bytes
+read 2024 pes bytes
+read 1288 pes bytes
+read 552 pes bytes
+read 184 pes bytes
+byte 4 is 4byte 5 is 74
+pes packet length is 1098
+read 1104 pes bytes
+read 552 pes bytes
+read 368 pes bytes
+read 552 pes bytes
+byte 4 is 4byte 5 is 74
+pes packet length is 1098
+read 3128 pes bytes
+read 1472 pes bytes
+read 2024 pes bytes
+read 2576 pes bytes
+read 552 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+byte 4 is 4byte 5 is 74
+pes packet length is 1098
+read 368 pes bytes
+read 552 pes bytes
+read 552 pes bytes
+read 552 pes bytes
+read 736 pes bytes
+read 2760 pes bytes
+read 1656 pes bytes
+read 2024 pes bytes
+read 2576 pes bytes
+read 368 pes bytes
+byte 4 is 4byte 5 is 74
+pes packet length is 1098
+read 552 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+byte 4 is 4byte 5 is 74
+pes packet length is 1098
+read 2024 pes bytes
+read 2208 pes bytes
+read 1840 pes bytes
+read 2024 pes bytes
+read 1472 pes bytes
+read 1288 pes bytes
+byte 4 is 4byte 5 is 74
+pes packet length is 1098
+read 1288 pes bytes
+subtitle magazine is 8, row is 0, pts from header is 2750807050
+STC is 2750591940
+PTS is 2750807050
+diff is 215110
+read 4096 pes bytes
+subtitle magazine is 8, row is 20, pts from header is -1
+subtitle text is       Volvemos a la mesa de trabajo     
+subtitle magazine is 8, row is 22, pts from header is -1
+subtitle text is             para descubrir...           
+STC is 2750607178
+PTS is -1
+diff is -2750607179
+read 4096 pes bytes
+read 3952 pes bytes
+paint TXTComponent
+
+      Volvemos a la mesa de trabajo     
+read 184 pes bytes
+            para descubrir...           
+read 552 pes bytes
+read 184 pes bytes
+read 552 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+byte 4 is 4byte 5 is 74
+pes packet length is 1098
+read 368 pes bytes
+read 552 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+byte 4 is 4byte 5 is 74
+pes packet length is 1098
+read 184 pes bytes
+read 184 pes bytes
+read 552 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+byte 4 is 4byte 5 is 74
+pes packet length is 1098
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+STC is 2750656946
+PTS is 2750900650
+diff is 243704
+read 4096 pes bytes
+byte 4 is 4byte 5 is 74
+pes packet length is 1098
+read 504 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+byte 4 is 4byte 5 is 74
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+byte 4 is 4byte 5 is 74
+pes packet length is 1098
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+byte 4 is 4byte 5 is 74
+pes packet length is 1098
+read 368 pes bytes
+read 552 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+byte 4 is 4byte 5 is 74
+pes packet length is 1098
+read 184 pes bytes
+read 184 pes bytes
+read 552 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+byte 4 is 4byte 5 is 74
+pes packet length is 1098
+read 368 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+byte 4 is 4byte 5 is 74
+pes packet length is 1098
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+byte 4 is 4byte 5 is 74
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+byte 4 is 4byte 5 is 74
+pes packet length is 1098
+read 552 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+byte 4 is 4byte 5 is 74
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 552 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+STC is 2750743372
+PTS is 2750979850
+diff is 236478
+read 4096 pes bytes
+read 504 pes bytes
+read 920 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+byte 4 is 4byte 5 is 74
+pes packet length is 1098
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+byte 4 is 4byte 5 is 74
+pes packet length is 1098
+read 552 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 552 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+byte 4 is 4byte 5 is 74
+pes packet length is 1098
+read 552 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+byte 4 is 4byte 5 is 74
+pes packet length is 1098
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+byte 4 is 4byte 5 is 74
+pes packet length is 1098
+read 552 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+byte 4 is 4byte 5 is 74
+pes packet length is 1098
+tsrunner playback stopped by the user
+info: pvr done
+paint TXTComponent
+
+paint TXTComponent
+
+paint TXTComponent
+
+paint TXTComponent
+
+~ > killall cvm[J
+Terminated
+~ > Graphic init.
+check command liinput: front_drv as /class/input/input4
+ne for serial ttyS2 console=ttyS0,115200 root=/dev/mtdblock2 panic=1 mem=28M videofmt=pal
+Ôinit. the front panel
+Graphic init done
+java.io.FileNotFoundException: /var/jet/lnb (No such file or directory)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at StbUtil.readOneLine(Unknown Source)
+	at LNBConfig.load(Unknown Source)
+	at StbMain.main(Unknown Source)
+	at sun.misc.CVM.runMain(Unknown Source)
+java.lang.NumberFormatException: null
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at LNBConfig.load(Unknown Source)
+	at StbMain.main(Unknown Source)
+	at sun.misc.CVM.runMain(Unknown Source)
+frequency 610000
+tsrunner playback stopped by the user
+info: pvr done
+TxtMonitor started
+Txtpid is 202
+read 368 pes bytes
+pes packet length is 1098
+read 552 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 1656 pes bytes
+pes packet length is 1098
+read 2760 pes bytes
+pes packet length is 1098
+pes packet length is 1098
+pes packet length is 1098
+read 1288 pes bytes
+pes packet length is 1098
+read 552 pes bytes
+read 184 pes bytes
+read 736 pes bytes
+pes packet length is 1098
+read 1104 pes bytes
+pes packet length is 1098
+read 3312 pes bytes
+pes packet length is 1098
+pes packet length is 1098
+pes packet length is 1098
+read 4096 pes bytes
+pes packet length is 1098
+pes packet length is 1098
+pes packet length is 1098
+pes packet length is 1098
+read 3632 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 1288 pes bytes
+pes packet length is 1098
+read 3496 pes bytes
+pes packet length is 1098
+pes packet length is 1098
+pes packet length is 1098
+read 4096 pes bytes
+pes packet length is 1098
+pes packet length is 1098
+pes packet length is 1098
+pes packet length is 1098
+read 3816 pes bytes
+read 736 pes bytes
+pes packet length is 1098
+read 736 pes bytes
+read 552 pes bytes
+pes packet length is 1098
+read 1288 pes bytes
+pes packet length is 1098
+read 2576 pes bytes
+pes packet length is 1098
+pes packet length is 1098
+read 4096 pes bytes
+pes packet length is 1098
+pes packet length is 1098
+pes packet length is 1098
+pes packet length is 1098
+read 2896 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+read 736 pes bytes
+read 920 pes bytes
+pes packet length is 1098
+read 3680 pes bytes
+pes packet length is 1098
+pes packet length is 1098
+pes packet length is 1098
+read 4096 pes bytes
+pes packet length is 1098
+pes packet length is 1098
+pes packet length is 1098
+pes packet length is 1098
+read 3080 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 920 pes bytes
+pes packet length is 1098
+read 2760 pes bytes
+pes packet length is 1098
+pes packet length is 1098
+read 4096 pes bytes
+pes packet length is 1098
+pes packet length is 1098
+pes packet length is 1098
+pes packet length is 1098
+read 4096 pes bytes
+read 824 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 552 pes bytes
+pes packet length is 1098
+read 1472 pes bytes
+pes packet length is 1098
+read 3312 pes bytes
+pes packet length is 1098
+pes packet length is 1098
+pes packet length is 1098
+read 920 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 552 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 184 pes bytes
+read 552 pes bytes
+pes packet length is 1098
+read 736 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 552 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 184 pes bytes
+read 552 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+STC is 2750656960
+PTS is 2750900650
+diff is 243690
+read 4096 pes bytes
+pes packet length is 1098
+pes packet length is 1098
+pes packet length is 1098
+pes packet length is 1098
+read 504 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 552 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 184 pes bytes
+read 552 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+read 552 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 920 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 552 pes bytes
+STC is 2750745626
+PTS is 2750990650
+diff is 245024
+pes packet length is 1098
+read 3680 pes bytes
+pes packet length is 1098
+pes packet length is 1098
+pes packet length is 1098
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+read 552 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 552 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+read 552 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+read 552 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 184 pes bytes
+read 552 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+read 552 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+read 552 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+STC is 2750836222
+PTS is 2751080650
+diff is 244428
+read 4096 pes bytes
+pes packet length is 1098
+pes packet length is 1098
+pes packet length is 1098
+pes packet length is 1098
+read 504 pes bytes
+read 552 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+subtitle magazine is 8, row is 0, pts from header is 2751102250
+read 184 pes bytes
+read 552 pes bytes
+read 368 pes bytes
+STC is 2750857892
+PTS is 2751102250
+diff is 244358
+pes packet length is 1098
+read 4096 pes bytes
+pes packet length is 1098
+pes packet length is 1098
+pes packet length is 1098
+subtitle magazine is 8, row is 0, pts from header is 2751116650
+subtitle magazine is 8, row is 20, pts from header is 2751116650
+subtitle text is     ...c^mo sobrevivi^ el Triceratops   
+subtitle magazine is 8, row is 22, pts from header is 2751116650
+subtitle text is     al ataque del Tyrannosaurus rex.    
+read 872 pes bytes
+STC is 2750873218
+PTS is 2751116650
+diff is 243432
+read 3864 pes bytes
+pes packet length is 1098
+pes packet length is 1098
+pes packet length is 1098
+pes packet length is 1098
+read 736 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+paint TXTComponent
+
+read 368 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+STC is 2750926942
+PTS is 2751170650
+diff is 243708
+pes packet length is 1098
+read 4096 pes bytes
+pes packet length is 1098
+pes packet length is 1098
+pes packet length is 1098
+read 504 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+read 552 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 552 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+read 552 pes bytes
+read 184 pes bytes
+read 552 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 736 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 184 pes bytes
+read 552 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+paint TXTComponent
+
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+read 552 pes bytes
+read 368 pes bytes
+STC is 2751015552
+PTS is 2751260650
+diff is 245098
+read 4048 pes bytes
+pes packet length is 1098
+pes packet length is 1098
+pes packet length is 1098
+pes packet length is 1098
+read 184 pes bytes
+read 552 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 368 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+read 184 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+paint TXTComponent
+
+read 368 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 736 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+pes packet length is 1098
+read 184 pes bytes
+read 184 pes bytes
+read 368 pes bytes
+tsrunner playback stopped by the user
+info: pvr done
+TxtMonitor close: started 
+TxtMonitor close: set stop
+TxtMonitor close: closed pid filtering
+TxtMonitor close: done
+STC is 2751106244
+PTS is 2751350650
+diff is 244406
+TxtMonitor stopped
+~ > killall cvm[J~ > killall cvm[J~ > killall cvm[J~ > killall cvm[J~ > ps[J~ > killall cvm[J
+~ > Terminated
+Graphic init.
+check command liinput: front_drv as /class/input/input5
+ne for serial ttyS2 console=ttyS0,115200 root=/dev/mtdblock2 panic=1 mem=28M videofmt=pal
+Ôinit. the front panel
+Graphic init done
+java.io.FileNotFoundException: /var/jet/lnb (No such file or directory)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at StbUtil.readOneLine(Unknown Source)
+	at LNBConfig.load(Unknown Source)
+	at StbMain.main(Unknown Source)
+	at sun.misc.CVM.runMain(Unknown Source)
+java.lang.NumberFormatException: null
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at LNBConfig.load(Unknown Source)
+	at StbMain.main(Unknown Source)
+	at sun.misc.CVM.runMain(Unknown Source)
+frequency 610000
+tsrunner playback stopped by the user
+info: pvr done
+TxtMonitor started
+Txtpid is 202
+subtitle magazine is 8, row is 0, pts from header is 2750814250
+subtitle magazine is 8, row is 20, pts from header is 2750814250
+subtitle text is       Volvemos a la mesa de trabajo     
+subtitle magazine is 8, row is 22, pts from header is 2750814250
+subtitle text is             para descubrir...           
+STC is 2750590230
+PTS is 2750814250
+diff is 224020
+paint TXTComponent
+
+      Volvemos a la mesa de trabajo     
+            para descubrir...           
+subtitle magazine is 8, row is 0, pts from header is 2751102250
+STC is 2750857830
+PTS is 2751102250
+diff is 244420
+subtitle magazine is 8, row is 0, pts from header is 2751116650
+subtitle magazine is 8, row is 20, pts from header is 2751116650
+subtitle text is     ...c^mo sobrevivi^ el Triceratops   
+subtitle magazine is 8, row is 22, pts from header is 2751116650
+subtitle text is     al ataque del Tyrannosaurus rex.    
+STC is 2750872822
+PTS is 2751116650
+diff is 243828
+paint TXTComponent
+
+paint TXTComponent
+
+    ...c^mo sobrevivi^ el Triceratops   
+    al ataque del Tyrannosaurus rex.    
+subtitle magazine is 8, row is 0, pts from header is 2751498250
+STC is 2751253054
+PTS is 2751498250
+diff is 245196
+subtitle magazine is 8, row is 0, pts from header is 2751573850
+subtitle magazine is 8, row is 20, pts from header is 2751573850
+subtitle text is         El resultado de la lucha        
+subtitle magazine is 8, row is 22, pts from header is 2751573850
+subtitle text is         entre cazador y presa...        
+STC is 2751372386
+PTS is 2751573850
+diff is 201464
+paint TXTComponent
+
+paint TXTComponent
+
+        El resultado de la lucha        
+        entre cazador y presa...        
+subtitle magazine is 8, row is 0, pts from header is 2751890650
+STC is 2751800678
+PTS is 2751890650
+diff is 89972
+subtitle magazine is 8, row is 0, pts from header is 2751905050
+subtitle magazine is 8, row is 20, pts from header is 2751905050
+subtitle text is     ...est[ determinado por qui\n ve    
+subtitle magazine is 8, row is 22, pts from header is 2751905050
+subtitle text is             primero a qui\n.            
+STC is 2751829764
+PTS is 2751905050
+diff is 75286
+paint TXTComponent
+
+paint TXTComponent
+
+    ...est[ determinado por qui\n ve    
+            primero a qui\n.            
+subtitle magazine is 8, row is 0, pts from header is 2752203850
+STC is 2752179218
+PTS is 2752203850
+diff is 24632
+paint TXTComponent
+
+subtitle magazine is 8, row is 0, pts from header is 2753049850
+subtitle magazine is 8, row is 20, pts from header is 2753049850
+subtitle text is        As] que, `ten]a buena vista      
+subtitle magazine is 8, row is 22, pts from header is 2753049850
+subtitle text is             el Tyrannosaurus?           
+STC is 2753064904
+PTS is 2753049850
+diff is -15054
+paint TXTComponent
+
+       As] que, `ten]a buena vista      
+            el Tyrannosaurus?           
+subtitle magazine is 8, row is 0, pts from header is 2753330650
+STC is 2753314542
+PTS is 2753330650
+diff is 16108
+paint TXTComponent
+
+subtitle magazine is 8, row is 0, pts from header is 2753503450
+subtitle magazine is 8, row is 20, pts from header is 2753503450
+subtitle text is     El tama|o de las cuencas oculares   
+subtitle magazine is 8, row is 22, pts from header is 2753503450
+subtitle text is                sugiere...               
+STC is 2753503178
+PTS is 2753503450
+diff is 272
+paint TXTComponent
+
+    El tama|o de las cuencas oculares   
+               sugiere...               
+subtitle magazine is 8, row is 0, pts from header is 2753773450
+STC is 2753767496
+PTS is 2753773450
+diff is 5954
+subtitle magazine is 8, row is 0, pts from header is 2753787850
+subtitle magazine is 8, row is 20, pts from header is 2753787850
+subtitle text is          ...que ten]a unos ojos         
+subtitle magazine is 8, row is 22, pts from header is 2753787850
+subtitle text is         del tama|o de pomelos...        
+paint TXTComponent
+
+STC is 2753782546
+PTS is 2753787850
+diff is 5304
+paint TXTComponent
+
+         ...que ten]a unos ojos         
+        del tama|o de pomelos...        
+subtitle magazine is 8, row is 0, pts from header is 2754072250
+STC is 2754069708
+PTS is 2754072250
+diff is 2542
+paint TXTComponent
+
+subtitle magazine is 8, row is 0, pts from header is 2754086650
+subtitle magazine is 8, row is 20, pts from header is 2754086650
+subtitle text is        ...con espacio para contar       
+subtitle magazine is 8, row is 22, pts from header is 2754086650
+subtitle text is             los sensores...             
+STC is 2754083300
+PTS is 2754086650
+diff is 3350
+paint TXTComponent
+
+       ...con espacio para contar       
+            los sensores...             
+
+~ > halt
+subtitle magazine is 8, row is 0, pts from header is 2754349450
+STC is 2754353326
+PTS is 2754349450
+diff is -3876
+paint TXTComponent
+
+subtitle magazine is 8, row is 0, pts from header is 2754363850
+subtitle magazine is 8, row is 20, pts from header is 2754363850
+subtitle text is             ...que garantizan           
+subtitle magazine is 8, row is 22, pts from header is 2754363850
+subtitle text is          una visi^n sofisticada.        
+STC is 2754356540
+PTS is 2754363850
+diff is 7310
+paint TXTComponent
+
+            ...que garantizan           
+         una visi^n sofisticada.        
+~ > starting pid 299, tty '': '/etc/init.d/rcK'
+system shutdown...
+
+/dev/ide/host0/bhda: drive_cmd: status=0x14 { us0/target0/lun0SeekComplete /disc:
+ issuingCorrectedError  standby command}
+
+ide: failed opcode was: 0x94
+The system is going down NOW!
+Sending SIGTERM to all processes
+Sending SIGKILLRequesting system halt
+Shutdown: hda
+System halted.
+System Halted
+é

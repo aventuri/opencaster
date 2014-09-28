@@ -1,0 +1,2 @@
+x264:
+replace the file x264/output/raw.c to enable as default output "MPEG2 Program Elementary Stream Packets" format as needed by OpenCaster

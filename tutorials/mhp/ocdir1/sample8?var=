@@ -1,0 +1,6 @@
+# Wrong result
+1.Text.1 = True, 90, 523, 25, 0x000000, Exit
+1.Text.2 = True, 87, 520, 25, 0xFFFFFF, Exit
+1.Text.3 = True, 100, 150, 31, 0xFFFFFF, You had to write foo my friend
+1.Graphic.1 = True, 52, 494, True, file:///redb.jpg
+1.RedKey = exit://, 1 

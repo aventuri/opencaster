@@ -1,0 +1,383 @@
+21/09/2013
+
+Change log author:
+Lorenzo Pallara (l.pallara@avalpa.com)
+
+Change log OpenCaster 3.2.1:
+- tools/*: m2ts2ts renamed m2ts2cbrts
+- tools/tsprinter: removed
+- libs/dvbobjects/*: added support for ATSC EIT
+- tutorials/*: removed tutorials from main packet, they are avilable on a support download from http://www.avalpa.com
+- extra/*: removed, they are now part of support download from http://www.avalpa.com
+
+Change log OpenCaster 3.2:
+- tools/mpe2sec/: added suppor for 64bit (by Julian Cable julian.cable@bbc.co.uk)
+- libs/dvbobjects/*: added more dvb-ssu descriptors support (by Andreas Regel andreas.regel@ttgoerler.de)
+- libs/dvbobjects/*: added BAT support (by Andreas Regel andreas.regel@ttgoerler.de)
+- libs/dvbobjects/*: removed duplicated descriptor ISO_639_language_descriptor
+- libs/dvbobjects/*: added application_recording_descriptor (by Jesper Gustin jesperg@opera.com)
+- tools/txt2pes.c: fixed compatibility issue 
+- tools/tsdiscont: added to fix some discontiuity issues (by Shane Andrusiak, blendz@shaw.ca)
+- tools/tsstamp: added pusi check
+
+Change log OpenCaster 3.1.4:
+- tutorials/*: capitalized ISO639 language codes 
+- tutorials/hbbtv-http: fixed small typo
+- tutorials/firsttime: bug fix for localtime
+- libs/dvbobjects/dvbobjects/DSMCC/Message.py compatibility fix for mythtv
+
+Change log OpenCaster 3.1.3:
+- tools/pesvideo2ts: source code cosmetics
+- extras/x264: added patch for x264 to output format required by OpenCaster
+- tutorials/hbbtv-dsmcc: added descriptor required by some receiveres
+
+Change log OpenCaster 3.1.2
+- tutorial/eitfilter: bug fix for services without scheduled events
+- tools/oc-update.sh: improved carousel head cache chances on some decoders
+- libs/: allows application_signaling with empty subfields
+
+Change log OpenCaster 3.1.1:
+- tools/*: fix overflow on CLOCK_MONOTONIC functions
+
+Change log OpenCaster 3.1:
+- tutorials: added .srt to teletext subtitles example, documentation coming soon
+- libs/: bug fix for multiplex txt pages in pmt descriptor
+- tools/esaudio2pes: added support for DTS, still on test
+- tools/esaudioinfo: added support for DTS, still on test
+- libs: added DVB descriptors for DTS
+- libs: bug fixes to support python 2.6
+- tools/* replaced gettimeofday with clock_gettime to enforce CLOCK_MONOTIC
+- tools/eitsecactualtoanother: added
+- tools/tstdt: added start time option for replay 
+- tools/tstcpsend: bug fix on init. value
+- tutorials: removed some useless file
+- libs: added SIT table
+- tutorials: added SIT example
+
+Change log OpenCaster 3.0:
+- tools/pesvideo2ts: generalized vbv, command line supports vbv size in bit, now it broadcasts h264 video (join is on test)
+- tools/pesvideo2ts: added 24 fps support
+- tools/ts2m2ts: added generate m2ts from ts
+- tools/m2ts2ts: added generate ts from m2ts
+- tools/pesinfo: prints also video pes size
+- tools/esvideo2pes renamed tools/esvideompeg2pes
+- tools/esvideoinfo renamed tools/esvideompeg2info
+- tools/vbv renamed tools/videompeg2vbv
+- tutorials: renamed with a meaningful name
+
+Change log OpenCaster 2.5.1:
+- libs/dvbobjects: removed default value for segment_last_section_number in EIT generation
+- tools/tspcrrestamp: rewritten, multicast multiplexing should recover better in network downs
+- tools/tsccc: doesn't check anymore for null packets cc errors 
+- tutorials/OCtutorial14: TOT example manages DST with iCalendar RFC
+- tutorials/OCtutorial12/13: removed as not supported anymore
+
+Change log OpenCaster 2.5:
+- tutorials/[mhp]: now include new Avalpa's Wizard xlet
+- tools/oc-update.sh: introduced new "smart compress" option, improved carousel optimization, check details inside
+- tools/file2mod.y: introduced new "smart compress" option, improved carousel optimization, check details inside
+
+Change log OpenCaster 2.4.7
+- tools/eitsecfilter: fix deprecated include for <limits.h>
+
+Change log OpenCaster 2.4.6.1:
+- tutorials/: some bug fixes
+
+Change log OpenCaster 2.4.6:
+- libs/dvbobjects/HBBTV: Added HbbTv support by Claude Vanderm (claude.vanderm@mediatv.com)
+- tools/eitsecfilter: save eit section on different file names ready for remuxing and playout
+- tools/eitsecmapper: replace onid and tsid on eit section files
+- tools/tsprinter: outputs a transport stream over a pc parallel port pins (max 2.1mbps 1 cpu 1GHZ 100%, ts packet jitter is high, use only for data)
+- tools/tsmodder: bug fix on ts input loop
+- tools/dvbobjects: bug fix for ATSC descriptors and tutorial
+- tools/ts2sec: added crc32 check, discard invalid sections
+- tools/pesaudio2ts: support fps other than 25 fps
+- tools/pesvideo2ts: support fps other than 25 fps
+- tools/pesclock: discontinued
+- tools/oc2sec: help changed, module version was not reported as hex
+- tools/tsstamp: header bug fix by (blendz@shaw.ca)
+- tools/tsmask: command line bug fix by (kailife.forge@gmail.com)
+- tutorials/: added tutorials for HbbTV
+- tutorials/: added tutorial for epg filtering and muxing
+- libs/dvbobjecs: added content descriptor
+- libs/dvbobjecs: bug fix registration_descriptor
+- libs/dvbobjecs/DVB/DataCarousel: bug fix for more than 256 modules by Robert Antosiak (robert.antosiak@digitaltv-labs.com)
+
+Change log OpenCaster 2.4.5:
+- tools/esvideo2pes: bug fix, now support fps other than 25 fps
+
+Change log OpenCaster 2.4.4:
+- tools/pesvideo2ts: added option to change pcr repetition rate
+- libs/dvbobjects: transaction id update flag bug fix (by tdv team at lifia.info.unlp.edu.ar)
+- libs/dvbobjects: added descriptors for SDBT (by tdv team at lifia.info.unlp.edu.ar)
+- tutorials:  data change, some TS7900HD firmware versions doesn't seem to support remount of the same carousel
+
+Change log OpenCaster 2.4.3:
+- tools/pesaudio2ts: bug fix on exit without loop, support for audio description generation
+- tools/esaudio2pes: support for audio description generation
+- tools/dvbobjects: bug fix for language descriptor, added support for audio description generation
+- tools/esvideoinfo: detects end_sequence
+- tools/pesdata2ts: bug fix ( was not using write)
+- tools/dvbobjects: added some ATSC descriptors still not tested
+- tools/tsmodder: now stop at the end of input file
+
+Change log OpenCaster 2.4.2:
+- libs/dvbobjects: added simple application descriptor for HbbTV Ait
+- libs/dvbobjects: added descriptors for SDBT (by Marco Casaroli <marco.casaroli@gmail.com>)
+- libs/dvbobjects: fixed transport stream terrestiral dellivery (by Keith Goodyer <kgoodyer@sky.com>)
+- tools/sec2ts: patch by Guislain Bonnard <guislain.bonnard@quadrille.fr> 
+- tools/ip2sec: patch by Guislain Bonnard <guislain.bonnard@quadrille.fr> 
+- tools/tstdt: now manages also tot
+- tools/totrestamp: removed
+- tools/tscbrmuxer: added option to stop muxing
+- libs/dvbobjects: fixed reserverd bits of tdt
+- tools/esaudio2pes: command line bug fix on large pts skip
+- tools/pes2es: removed seek, can be used in fifo
+
+Change log OpenCaster 2.4.1:
+- tools/tstdt: now manages also tot
+- tools/totrestamp: removed
+- tools/tscbrmuxer: added option to stop muxing
+- libs/dvbobjects: fixed reserverd bits of tdt
+- tools/esaudio2pes: command line bug fix on large pts skip
+- tools/pes2es: removed seek, can be used in fifo
+
+Change log OpenCaster 2.4:
+- tools/tspcrrestamp: added, this tool allows re-stamping of input transport streams
+- tools/tsorts : added, this tool allows re-multiplexing of input transport streams
+- tools/tscrypt: support crypting using libdvbcsa, the build of this tool is disabled by default because libdvbcsa is needed, tested with biss-e cam
+
+Change log OpenCaster 2.3.5:
+- missing 1 byte in oddParity teletext array 
+- added tscbrmuxer user friendly input option o:total_bitrate
+
+Change log OpenCaster 2.3.4:
+- pretty printing bug fix fper pesaudio2ts
+
+Change log OpenCaster 2.3.3:
+- added EPG mnemonics
+
+Change log OpenCaster 2.3.2:
+- libs/dvbobjects: bug fix for tools/esaudio2pes wrong input parameter parsing
+
+Change log OpenCaster 2.3.1:
+- libs/dvbobjects: bug fix for dvb-ssu
+
+Change log OpenCaster 2.3:
+- tools/tsudpsend: bug fix for some bitrates
+- tools/tstimedwrite: bug fix for some bitrates
+- tools/pesclock: bug fix, shows only on some libc/kernel config
+- tools/tsmodder: now loops on replacement input files
+- tools/tspcrstamp: bug fix on initial pcr value
+- libs/dvbobjects: added some descriptors for SBTVD standard (by Robson Tovo robson@tecsysbrasil.com.br)
+- libs/dvbobjects: fixed reserved values different from standards
+- libs/dvbobjects: bug fix, minBlockTime had to be greater than zero some samsung lcd models concerned about it
+- libs/dvbobjects: added descriptors for dts, application storage and lcn v2 (by a.roszak@adbglobal.com)
+- manual: removed manual, Avalpa Broadcast Server manual is now available for download
+- extras: removed
+
+Change log OpenCaster 2.2:
+- tools/pesaudio2ts : added sample_per_frame option
+- tools/esaudio2pes: added sample_per_frame option
+- libs/dvbobjects: improved ac3 descriptor
+- tools/sec2ts: added padding options (by Julian Cable julian.cable@bbc.co.uk)
+
+Change log OpenCaster 2.1:
+- tools/ip2sec: removed
+- tools/mpe2sec: add (by Julian Cable julian.cable@bbc.co.uk)
+- tools/tsccc: continuity counter check
+- tools/txt2pes: txt encapsulation support
+- tools/esaudioinfo: added ac3 minimum parsing
+- tools/pesdata2ts: data encapsulation tool for time stamped data (like subtitles)
+- libs/sectioncrc/sectioncrc.c: 64bit support (by Gil Pedersen <gil@cmi.aau.dk>), janitoring (by Kurganov Yanis <visor@project-i> )
+- libs/dvbobjects: time_slice_fec_identifier_descriptor fix (by Gil Pedersen <gil@cmi.aau.dk>)
+- libs/dvbobjects: section stream event bug fix (by Gabriel Paduan gpaduan@yahoo.com.br)
+- libs/dvbobjects: added suport for DVB-SSU
+- libs/dvbobjects: added suport for teletext
+- OCtutorials: are added to the main package
+- OCtutorials: added tutorial for DVB-SSU
+- OCtutorials: added tutorial for teletext
+- manual: added to the main package
+
+Change log OpenCaster 2.0:
+- tools/tsinputswitch: added
+- tools/tstcpsend: added
+- tools/tstcpreceive: added
+- tools/pesclock: added (this deserved the major because enable OpenCaster to act as pes playout)
+- tools/tstimeout: added
+- tools/pesvideo2ts: fifo support
+- tools/pesaudio2ts: fifo support and synchornization with extrenal video file length
+- tools/esvideo2pes: video length output file added, added math to manage pts/dts round up
+- tools/esaudio2pes: added math to manage pts round up
+- tools/ts2pes: reduced 
+- tools/tspcrstamp: bug fix typo
+- tools/esvideoinfo: fixed parse error 
+- tools/vbv: removed wrong second fprintf, fixed parse error
+- libs/dvbobjects/dvbobjects/* : some reserved bit were signalled wrong
+- libs/dvbobjects/dvbobjects/MPEG/Descriptors.py: larger network name size was used
+- libs/dvbobjects/dvbobjects/MPEG/Descriptors.py: descriptors added
+- libs/dvbobjects/dvbobjects/MPEG/EBUTeletext.py: added
+
+Change log OpenCaster 1.3:
+- tools/esvideo2pes: manage dynamic GOP, added limit to cut audio at the end
+- tools/esaudio2pes: pts increment is not constant, quaility improved, added limit to cut audio at the end
+- tools/pesvideo2ts: added pts restamp for loop
+- tools/pesaudio2ts: added pts restamp for loop
+- tools/tspcrstamp: added 
+- tools/tstimedwrite: added
+- tools/tspcrmeasure: bug fix typo
+
+Change log OpenCaster 1.2:
+- libs/dvbobjects/dvbobjects/DVB/Descriptors.py: add AC3 and EPG descriptors by Antoni Roszak (a.roszak@osmosys.tv)
+- tools/oc2sec/oc-update.sh: bug fix on very big carousel temporary directory clean
+- tools/ts2sec: added
+- tools/tsudpreceive: added
+- tools/tsudpsend: added (enable IPTV output)
+- tools/dsmcc-receive: added
+- tools/tsstamp: changed usage print
+
+Change log OpenCaster 1.1:
+- libs/dvbobjects/dvbobjects/MPEG/DVBH_Descriptors.py: merged from fatcaps v0.5 by Andreas Berger (berger@ftw.au)
+- libs/dvbobjects/dvbobjects/PSI/INT.py: merged from fatcaps v0.5 Andreas Berger (berger@ftw.au)
+- libs/dvbobjects/dvbojects/MPEG/Descriptors.py: added data descriptors by Kovacs Balazs (basq@vendegvaro.hu)
+- tools/tscbrmuxer: bug fix on continuity counter for sections of a single ts packet
+- tools/tsloop: bug fix first packet repeated twice
+- libs/dvbobjects/dvbobjects/PSI/PAT.py: bug fix on private indicator
+- tools/oc-update.sh: dsmcc padding option continuity counter is broken fixed with tsfixcc
+- tools/tsfixcc: added, increase cc of very packet, doesn't account for adaptation field, to use only with sections
+- tools/tspcrmeasure: print bug fix on the first pcr byte
+- tools/esaudio2pes: support for audio frame padding
+
+Change log OpenCaster 1.0:
+- tools/esvideo2pes: bug fixed, was working if GOP had 2 B-frame
+- tools/pesvideo2ts: added a pcr packet at the begin
+- tools/tsstamp: added support for pts and dts restamp to manage loops (this deserved the major because enabled an easy use of video files and the manual examples to be written)
+
+Change log JustDVB-It 3.1:
+- bug fix on sec2ts ts section padding after notice by Fernando Martinze Navarro (FernandoMartinezNavarro@rohde-schwarz.com)
+
+Change log JustDVB-It 3.0:
+added support for mpeg2 elementary stream video input from ffmpeg
+added CAT, EMM, ECM sections
+started merging dvb-h funcionalities from fatcaps of amuse project, kudos to Andreas Berger (berger@ftw.at)
+- tools/pes2ts: renamed tools/pesaudio2ts
+- tools/tsvbr2cbr: added
+- tools/pesvideo2ts: added 
+- added ffmpeg directory with sample .sh to generate audio/video input files from ffmpeg
+- added ffmpeg/encode.txt 
+- added tools/tsstamp: PCR stamping tool
+- tools/tscbrmuxer: fix to manage small bit rate, needs refactoring
+
+Change log JustDVB-It 2.1:
+fixed interoperability issue with some old ADB boxes dsmcc client with last section number of modules multiple of 4066
+improved modules update performance
+
+Change log JustDVB-It 2.0:
+SciTE help included
+Bluetop BSTC-12 DVB-ASI output: tested
+Dektec DTA110T DVB-T modulator support: tested
+MHEG5 DSMCC carousel generation: tested
+Fixed support for python 2.4, currently both python 2.3 and 2.4 are working properly
+Transport stream successfully tested against StreamAnalyzer of Panasonic from MHP KBD
+Sample configuration timings successfully tested against TR-101i 290 with Dektec StreamXpert 
+Removed debug prints
+- extras/javasrc: added java source code of the example applications
+- extras/mainconcept: added a script to manage mainconcept output
+- bash-config/: added application storage option for MHP 1.1.2
+- bash-config/: added Yambo 2.0 example applications
+- bash-config/: added Test ste example application
+SciTE help included
+- python-config/: new python only config, bash will phase out...
+- python-config/: it is possibile to specify module id for each file or only for some, check the .descriptors example
+- python-config/: added datacarousel example
+- tools/i3942ts: added
+- tools/tspcrmeasure: bug fix on print
+- tools/tsloop: cc fix
+- tools/zpipe: added
+- tools/DtPlay: removed, now it is necessary to get it from Dektec web site
+- tools/lib/DTAPI: removed, now it is necessary to get it from Dektec web site
+- libs/: added application storage descriptor (MHP 1.1.2)
+- libs/: added parental rating descriptor
+- libs/: added logical channel number descriptor
+- libs/: added support for compressed DSMCC modules
+added support for very large files (>2GB)
+- manual.txt: Video and audio multiplexing revisited, renamed readme.txt (people miss it...)
+
+Change log JustDVB-It 1.2:
+- dvbobjects/STE.py: addded Stream Event Descriptor Section
+- dvbobjects/STEO.py: addded Stream Event Object
+- dvbobjects/DSMCC: addded Stream Event Object with Do-It-Now support
+- config/: stream event example added
+- tools/tsnullshaper: added files loop to reduce latency
+
+Change log JustDVB-It 1.1.1:
+Just a very cosmetical fix
+
+Change log JustDVB-It 1.1:
+Fix a JustDvb-It bug about bad string termination thanks to IdWay support.
+
+Change log JustDVB-It 1.0:
+- DtRecord: removed, if u need it u can use the official from Dektec
+- EIT: bug fix
+- tstdt: added new, generates gmt time from server clock and restamp TDT packets
+- docs: manual.txt added
+- tools/tsloop: support multiple input, removed buffering, good for transport scheduling
+- config: shows an example of cbr muxing and multicarousel from MainConcept's input
+
+Change log JustDVB-It 0.5:
+- tools/tsnullshaper: bug fix        
+- tools/oc2sec: buf fix on debug prints 
+- tools/sec2ts: bug fix on .ts length
+- psi tables python look: same semantic different syntax
+- dvbobjects/dvbobjectsPMT.py: changed program_loop in stream_loop
+- config: added 
+- tools/data2sec: renamed oc2sec
+- tools/esaudio2pes: added
+- tools/esaudioinfo: added
+- tools/esvideo2pes: added
+- tools/esvideoinfo: added
+- tools/pes2es: added
+- tools/pes2ts: added
+- tools/pesinfo: added
+- tools/ts2pes: added
+- tools/tscbrmuxer: added
+- tools/vbv: added
+
+Change log JustDVB-It 0.4:
+moved to kernel 2.6
+everything can be run without root privileges
+new directories structure
+- tools/tsfilter: added new
+- tools/tspidmapper: modified input syntax 
+- tools/data2sec: rearchitected
+- config/: added
+- extern/: removed
+- set-ups/: removed
+- drivers/dvbcharts: removed
+
+Chane log JustDVB-It 0.3.2:
+minor buf fixes
+
+Chane log JustDVB-It 0.3.1:
+minor buf fixes
+- tools/sec2tspackets: renamed sec2ts 
+
+Change log JustDVB-It 0.3:
+- tools/ip2sec: added new
+- tools/tspidmapper: added new
+- tools/tspcrmeasure: added new
+- set-ups/iptrafficdemo: added new
+- tools/tsloop: enhanced with variable buffer support
+- tools/tsmodder: enhanced with variable buffer support
+- tools/tsfiller: enhanced with variable buffer support
+- tools/tsnullshaper: enhanced with variable buffer support, read packets to susbtitute only if they are read
+- extern/dvbasi/DtPlay-custom: DtPlay enhanced with variable buffer support
+- extern/dvbasi/DtRecord-custom: DtRecord enhanced with variable buffer support
+- extern/dvbasi/DtPlay: removed
+- extern/dvbasi/DtRecord: removed
+
+Change log JustDVB-It 0.2:
+- tools\tsnullshaper: added time insertion
+- tools\dvbdata: more bug fixes
+- tools\data2sec: added new MPEG and DVB descriptors, modules versioning from input parameters
+- set-ups\cindemo: added multiple application ait example and fixed time of tables insertion

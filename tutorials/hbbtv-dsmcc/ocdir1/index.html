@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Hello world</title>
+
+<link rel="stylesheet" type="text/css" href="global.css" media="all"/>
+
+<script type="text/javascript">
+//<![CDATA[
+	
+	
+	var application = null;
+	var keyset = null;
+	var keyHidden = null;
+	var keyVisible = null;
+	var broadcast_video = null;
+	
+	function start() {
+		try {
+		
+			// retrive key sets
+			application = document.getElementById("appMgr").getOwnerApplication(document);
+			keyset = application.privateData.keyset;
+			
+			// set red hidden, others visible
+			if (keyset) {
+				if (!keyHidden)  {
+					keyHidden  = keyset.RED;
+				}
+				if (!keyVisible) {
+					keyVisible =  0x33F;
+				}
+			}
+			
+			broadcast_video = document.getElementById("video");
+			if (typeof (broadcast_video.fullScreen) != 'undefined') {
+				broadcast_video.setFullScreen(false);
+			}
+			
+			if (typeof (broadcast_video.bindToCurrentChannel) != 'undefined') {
+				broadcast_video.bindToCurrentChannel();
+			}
+			
+			
+		} catch (e) {
+			alert(e);
+		}
+	}
+	
+//]]>
+</script>
+
+</head>
+<body onload="start();">
+	<div> <h1>HbbTV HelloWorld</h1> </div>
+	<div style="z-index: 0; position: absolute; width: 100%; height: 100%; top: 0; left:0;" id="vidCont">
+		<object id="video" type="video/broadcast"> </object>
+	 </div>
+	<div style="visibility: hidden; display: none;">
+		<object type="application/oipfApplicationManager" id="appMgr">  </object>
+	</div>
+</body>
+</html>
