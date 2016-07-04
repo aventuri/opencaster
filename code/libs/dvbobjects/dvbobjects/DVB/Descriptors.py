@@ -452,7 +452,7 @@ class PDC_descriptor(Descriptor):
         fmt = "!BH"
         return pack(fmt,
                     (0xF0) | (self.day >> 1),
-		    (self.day << 15) | (self.month << 11) | (self.hour << 6) | (self.minute),
+		    ((self.day & 0x01) << 15) | (self.month << 11) | (self.hour << 6) | (self.minute),
         )
 					
 
