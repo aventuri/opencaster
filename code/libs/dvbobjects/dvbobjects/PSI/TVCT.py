@@ -109,12 +109,10 @@ class service_location(DVBobject):
 	def pack(self):
 
 		#pack service_location
-		return pack("!BHBBB",
+		return pack("!BH3s",
 			self.stream_type,                 # 8bit  (stream_type)
 			0xE000 | (self.elementary_PID & 0x1FFF), # 16bit (elementary_PID) (3 + 13)
-			0,                                # 8bit  (ISO_639_language_code)
-			0,                                # 8bit  (ISO_639_language_code)
-			0                                 # 8bit  (ISO_639_language_code)
+			self.ISO_639_language_code        # 8*3 bit  (ISO_639_language_code)
 		)
 
 
