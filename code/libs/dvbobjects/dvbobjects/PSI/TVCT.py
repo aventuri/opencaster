@@ -64,7 +64,8 @@ class channel_loop_item(DVBobject):
 		dl_bytes = string.join(
 			map(lambda x: x.pack(),
 			self.descriptors_loop),
-			"")
+			""
+		)
 
 		fmt = "!%dsLLHHBBHH%ds" % (len(self.short_name), len(dl_bytes))
 		return pack(fmt,
@@ -78,4 +79,41 @@ class channel_loop_item(DVBobject):
 			self.source_id,
 			0xFC00 | (len(dl_bytes) & 0x3FF),
 			dl_bytes
-			)
+		)
+
+######################################################################
+class service_location_descriptor(DVBobject):
+
+	def pack(self):
+
+		#pack service_location_loop
+		sl_bytes = string.join(
+			map(lambda x: x.pack(),
+			self.service_location_loop),
+			""
+		)
+
+		fmt = "!BBHB%ds" % (len(sl_bytes))
+		return pack(fmt,
+			self.descriptor_tag,              # 8bit  (descriptor_tag)
+			3+len(sl_bytes),                  # 8bit  (descriptor_length)
+			0xE000 | (self.PCR_PID & 0x1FFF), # 16bit (PCR_PID) (3 + 13)
+			len(self.service_location_loop),  # 8bit  (number_elements)
+			sl_bytes                          # service_location_loop data
+		)
+
+
+######################################################################
+class service_location(DVBobject):
+
+	def pack(self):
+
+		#pack service_location
+		return pack("!BH3s",
+			self.stream_type,                 # 8bit  (stream_type)
+			0xE000 | (self.elementary_PID & 0x1FFF), # 16bit (elementary_PID) (3 + 13)
+			self.ISO_639_language_code        # 8*3 bit  (ISO_639_language_code)
+		)
+
+
+

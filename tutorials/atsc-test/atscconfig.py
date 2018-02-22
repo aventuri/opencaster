@@ -57,7 +57,24 @@ tvct = terrestrial_virtual_channel_section(
 			hide_guide = 0,
 			service_type = 0x2, # television
 			source_id = 0x1, # region?
-			descriptors_loop = [],
+			descriptors_loop = [
+				service_location_descriptor(
+					descriptor_tag = 161,
+					PCR_PID = 256,
+					service_location_loop = [
+						service_location(
+							stream_type = 2,
+							elementary_PID = 256,
+							ISO_639_language_code = "eng"
+						),
+						service_location(
+							stream_type = 129,
+							elementary_PID = 257,
+							ISO_639_language_code = "eng"
+						)
+					]
+				) 
+			]
 		)
 	],
 	additional_descriptors_loop = [],
