@@ -65,10 +65,12 @@ tvct = terrestrial_virtual_channel_section(
 						service_location(
 							stream_type = 2,
 							elementary_PID = 256,
+							ISO_639_language_code = "eng"
 						),
 						service_location(
 							stream_type = 129,
 							elementary_PID = 257,
+							ISO_639_language_code = "eng"
 						)
 					]
 				) 
