@@ -548,9 +548,8 @@ class subtitling_descriptor(Descriptor):
 		    self.subtitling_data_descriptor_loop),
 		    "")
 		    
-	fmt = "!B%ds" % len(data_bytes)
+	fmt = "!%ds" % len(data_bytes)
 	return pack(fmt,
-	    len(data_bytes),
 	    data_bytes,
 		)
 
