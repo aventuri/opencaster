@@ -1,9 +1,9 @@
 #! /usr/bin/env python
 
 # This file is part of the dvbobjects library.
-# 
+#
 # Copyright 2000-2001, GMD, Sankt Augustin
-# -- German National Research Center for Information Technology 
+# -- German National Research Center for Information Technology
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -23,38 +23,40 @@ from dvbobjects.utils import *
 from dvbobjects.DSMCC.BIOP import Tap
 
 ######################################################################
+
+
 class IOR(DVBobject):
 
     def __init__(self, **kwargs):
-        apply(DVBobject.__init__, (self,), kwargs)
+        DVBobject.__init__(*(self,), **kwargs)
 
         # Hard coded; TBD...
         objectLocation = BIOP_ObjectLocation(
-            carouselId = self.carouselId,
-            moduleId   = self.moduleId,
-            objectKey  = self.objectKey,
-            )
+            carouselId=self.carouselId,
+            moduleId=self.moduleId,
+            objectKey=self.objectKey,
+        )
 
         tap = Tap.delivery_para_tap(
-            assocTag      = self.assocTag,
-            transactionId = self.transactionId,
-            timeout       = self.timeout,
-            )
+            assocTag=self.assocTag,
+            transactionId=self.transactionId,
+            timeout=self.timeout,
+        )
 
         connBinder = DSM_ConnBinder(
-            tap = tap,
-            )
+            tap=tap,
+        )
 
         self.profile = BIOPProfileBody(
-            objectLocation = objectLocation,
-            connBinder = connBinder,
-            )
-            
+            objectLocation=objectLocation,
+            connBinder=connBinder,
+        )
+
     def pack(self):
 
         taggedProfiles_count = 1        # MHP / TBD
 
-        assert len(self.type_id) == 4, `self.type_id`
+        assert len(self.type_id) == 4, repr(self.type_id)
 
         profile_bytes = self.profile.pack()
 
@@ -65,7 +67,7 @@ class IOR(DVBobject):
                ) % (
             len(self.type_id),
             len(profile_bytes),
-            )
+        )
 
         ior_bytes = pack(
             FMT,
@@ -73,11 +75,13 @@ class IOR(DVBobject):
             self.type_id,
             taggedProfiles_count,
             profile_bytes,
-            )
+        )
 
         return ior_bytes
 
 ######################################################################
+
+
 class BIOPProfileBody(DVBobject):
 
     profileId_tag = 0x49534F06
@@ -86,16 +90,15 @@ class BIOPProfileBody(DVBobject):
     def __init__(self, **kwargs):
 
         # Initialize SuperClass
-        apply(DVBobject.__init__, (self,), kwargs)
-
+        DVBobject.__init__(*(self,), **kwargs)
 
     def pack(self):
 
         profile_data = (
             self.objectLocation.pack()
             + self.connBinder.pack()
-            )
-        
+        )
+
         lite_component_count = 2
         profile_data_length = len(profile_data) + 2
 
@@ -107,7 +110,7 @@ class BIOPProfileBody(DVBobject):
                "%ds"                    # profile_data
                ) % (
             len(profile_data),
-            )
+        )
 
         return pack(
             FMT,
@@ -116,16 +119,16 @@ class BIOPProfileBody(DVBobject):
             self.profile_data_byte_order,
             lite_component_count,
             profile_data,
-            )
+        )
 
 
 ######################################################################
 class BIOP_ObjectLocation(DVBobject):
 
-    componentId_tag    = 0x49534F50
+    componentId_tag = 0x49534F50
     biop_version_major = 0x01
     biop_version_minor = 0x00
-    
+
     def pack(self):
 
         FMT = (
@@ -137,8 +140,8 @@ class BIOP_ObjectLocation(DVBobject):
             "B"                         # major version
             "B"                         # minor version
             "B"                       	# objectKey length
-	    "L"				# objectKey
-            )  
+            "L"				# objectKey
+        )
 
         return pack(
             FMT,
@@ -148,15 +151,17 @@ class BIOP_ObjectLocation(DVBobject):
             self.moduleId,
             self.biop_version_major,
             self.biop_version_minor,
-	    4,
-	    self.objectKey,
-            )
+            4,
+            self.objectKey,
+        )
 
 ######################################################################
+
+
 class DSM_ConnBinder(DVBobject):
 
     componentId_tag = 0x49534F40
-    
+
     def pack(self):
 
         taps_count = 1
@@ -168,7 +173,7 @@ class DSM_ConnBinder(DVBobject):
             "B"                         # component_data_length
             "B"                         # taps_count
             "%ds"                       # taps_bytes
-            ) % len(taps_bytes)
+        ) % len(taps_bytes)
 
         return pack(
             FMT,
@@ -176,4 +181,4 @@ class DSM_ConnBinder(DVBobject):
             calcsize(FMT) - 5,          # component_data_length
             taps_count,
             taps_bytes,
-            )
+        )

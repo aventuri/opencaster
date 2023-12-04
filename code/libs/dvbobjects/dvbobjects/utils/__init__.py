@@ -1,9 +1,9 @@
 #! /usr/bin/env python
 
 # This file is part of the dvbobjects library.
-# 
-# Copyright © 2000-2001, GMD, Sankt Augustin
-# -- German National Research Center for Information Technology 
+#
+# Copyright (C) 2000-2001, GMD, Sankt Augustin
+# -- German National Research Center for Information Technology
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -20,5 +20,5 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
 
 from struct import pack, unpack, calcsize
-from DVBobject import DVBobject, CDR
-import crc32
+from .DVBobject import DVBobject, CDR
+from . import crc32

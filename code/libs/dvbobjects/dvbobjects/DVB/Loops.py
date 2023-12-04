@@ -1,9 +1,9 @@
 #! /usr/bin/env python
 
 # This file is part of the dvbobjects library.
-# 
+#
 # Copyright  2000-2001, GMD, Sankt Augustin
-# -- German National Research Center for Information Technology 
+# -- German National Research Center for Information Technology
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@ from dvbobjects.MPEG.Descriptor import Descriptor
 ######################################################################
 class GroupInfoIndication(DVBobject):
 
-    privateData = ""
+    privateData = b""
 
     def __init__(self, superGroup):
 
@@ -38,9 +38,7 @@ class GroupInfoIndication(DVBobject):
             self.groupInfos.append(group.getGroupInfo())
 
     def pack(self):
-        infos = string.join(map(lambda i: i.pack(),
-                                self.groupInfos),
-                            "")
+        infos = b"".join([i.pack() for i in self.groupInfos])
         FMT = ("!"
                "H"                      # NumberOfGroups
                "%ds"                    # group infos
@@ -54,14 +52,14 @@ class GroupInfoIndication(DVBobject):
                     len(self.privateData),
                     self.privateData,
                     )
-    
+
 ######################################################################
+
+
 class GroupInfo(DVBobject):
 
     def pack(self):
-        self.groupInfo = string.join(map(lambda d: d.pack(),
-                                         self.descriptors),
-                                     "")
+        self.groupInfo = b"".join([d.pack() for d in self.descriptors])
 
         FMT = ("!"
                "L"                      # groupId
@@ -71,7 +69,7 @@ class GroupInfo(DVBobject):
                ) % (
             len(self.groupCompatibility),
             len(self.groupInfo),
-            )
+        )
 
         return pack(FMT,
                     self.groupId,
@@ -83,6 +81,8 @@ class GroupInfo(DVBobject):
                     )
 
 ######################################################################
+
+
 class ModuleInfoIndication(DVBobject):
 
     def __init__(self, group):
@@ -94,9 +94,7 @@ class ModuleInfoIndication(DVBobject):
             self.moduleInfos.append(module.getModuleInfo())
 
     def pack(self):
-        infos = string.join(map(lambda i: i.pack(),
-                                self.moduleInfos),
-                            "")
+        infos = b"".join([i.pack() for i in self.moduleInfos])
         FMT = ("!"
                "H"                      # NumberOfModules
                "%ds"                    # module infos
@@ -106,20 +104,20 @@ class ModuleInfoIndication(DVBobject):
                     len(self.moduleInfos),
                     infos,
                     )
-    
+
 ######################################################################
+
+
 class ModuleInfo(DVBobject):
 
     def pack(self):
         if self.moduleInfo:
             moduleInfoBytes = self.moduleInfo.pack()
-	elif self.moduleInfo == "" and len(self.descriptors) == 0:
-            moduleInfoBytes = ""	    
+        elif self.moduleInfo == "" and len(self.descriptors) == 0:
+            moduleInfoBytes = ""
         else:
-            moduleInfoBytes = string.join(
-                map(lambda d: d.pack(),
-                    self.descriptors),
-                "")
+            moduleInfoBytes = b"".join(
+                [d.pack() for d in self.descriptors])
 
         FMT = ("!"
                "H"                      # moduleId
@@ -128,7 +126,7 @@ class ModuleInfo(DVBobject):
                "B%ds"                   # moduleInfo
                ) % (
             len(moduleInfoBytes),
-            )
+        )
 
         return pack(FMT,
                     self.moduleId,
@@ -139,18 +137,22 @@ class ModuleInfo(DVBobject):
                     )
 
 ###################################################################
+
+
 class name_descriptor(Descriptor):
 
     descriptor_tag = 0x02
 
     def bytes(self):
         self.name_length = len(self.name)
-        fmt ="!%ds" % self.name_length
+        fmt = "!%ds" % self.name_length
         return pack(fmt,
                     self.name,
                     )
 
 ###################################################################
+
+
 class compressed_descriptor(Descriptor):
 
     descriptor_tag = 0x09
@@ -159,16 +161,18 @@ class compressed_descriptor(Descriptor):
 
         compression_method = 0x08
 
-	sizeFile = "%s.size" % self.name
-	items = string.split(open(sizeFile).readline())
-	original_size = eval(items[0])
-	# print("module size %d" % original_size)
-        fmt ="!BL" 
+        sizeFile = "%s.size" % self.name
+        items = string.split(open(sizeFile).readline())
+        original_size = eval(items[0])
+        # print("module size %d" % original_size)
+        fmt = "!BL"
         return pack(fmt,
-	            compression_method,
+                    compression_method,
                     original_size,
                     )
 ###################################################################
+
+
 class crc32_descriptor(Descriptor):
     descriptor_tag = 0x05
 
@@ -176,10 +180,11 @@ class crc32_descriptor(Descriptor):
         fmt = "!L"
         return pack(fmt, self.calc_crc32)
 ###################################################################
+
+
 class ssu_module_type_descriptor(Descriptor):
     descriptor_tag = 0x0A
 
     def bytes(self):
         fmt = "!B"
         return pack(fmt, self.module_type)
-

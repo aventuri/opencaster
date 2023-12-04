@@ -1,8 +1,8 @@
 #! /usr/bin/env python
 
 # This file is part of the dvbobjects library.
-# 
-# Copyright © 2009-2013 Lorenzo Pallara l.pallara@avalpa.com
+#
+# Copyright (C) 2009-2013 Lorenzo Pallara l.pallara@avalpa.com
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -27,30 +27,30 @@ from dvbobjects.utils import *
 from dvbobjects.DVB.Descriptors import *
 
 ######################################################################
+
+
 class time_offset_section(DVBobject):
-	
-	def pack(self):
-	
-		date = MJD_convert(self.year, self.month, self.day)
-		# pack service_stream_loop
-		tl_bytes = string.join(
-			map(lambda x: x.pack(),
-			self.descriptor_loop),
-			"")
-		
-		fmt = "!BHHBBBH%ds" % len(tl_bytes) 
-		data = pack(fmt,
-			0x73,
-			0x7000 | ((len(tl_bytes) + 11) & 0xFFF),
-			date,
-			self.hour,
-			self.minute,
-			self.second,
-			0xF000 | (len(tl_bytes) & 0xFFF),
-			tl_bytes
-		)
-		return data + self.crc_32(data)
-	
-	def crc_32(self, data):
-		crc = crc32.CRC_32(data)
-		return pack("!L", crc)
+
+    def pack(self):
+
+        date = MJD_convert(self.year, self.month, self.day)
+        # pack service_stream_loop
+        tl_bytes = b"".join(
+            [x.pack() for x in self.descriptor_loop])
+
+        fmt = "!BHHBBBH%ds" % len(tl_bytes)
+        data = pack(fmt,
+                    0x73,
+                    0x7000 | ((len(tl_bytes) + 11) & 0xFFF),
+                    date,
+                    self.hour,
+                    self.minute,
+                    self.second,
+                    0xF000 | (len(tl_bytes) & 0xFFF),
+                    tl_bytes
+                    )
+        return data + self.crc_32(data)
+
+    def crc_32(self, data):
+        crc = crc32.CRC_32(data)
+        return pack("!L", crc)

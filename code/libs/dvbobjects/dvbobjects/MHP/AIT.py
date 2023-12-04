@@ -1,9 +1,9 @@
 #! /usr/bin/env python
 
 # This file is part of the dvbobjects library.
-# 
+#
 # Copyright  2000-2001, GMD, Sankt Augustin
-# -- German National Research Center for Information Technology 
+# -- German National Research Center for Information Technology
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -24,49 +24,46 @@ from dvbobjects.MPEG.Section import Section
 from dvbobjects.utils import *
 
 ######################################################################
+
+
 class application_information_section(Section):
 
     table_id = 0x74
-    
+
     section_max_size = 1024
-    
 
     def pack_section_body(self):
-    
+
         self.private_indicator = 1
 
         # pack common_descriptor_loop
-        cdl_bytes = string.join(
-            map(lambda x: x.pack(),
-                self.common_descriptor_loop),
-            "")
+        cdl_bytes = b"".join(
+            [x.pack() for x in self.common_descriptor_loop])
 
         # pack applicaton_loop
-        apl_bytes = string.join(
-            map(lambda x: x.pack(),
-                self.application_loop),
-            "")
+        apl_bytes = b"".join(
+            [x.pack() for x in self.application_loop])
 
-        self.table_id_extension = self.application_type # ???
+        self.table_id_extension = self.application_type  # ???
 
         fmt = "!H%dsH%ds" % (len(cdl_bytes), len(apl_bytes))
         return pack(fmt,
-            0xF000 | (len(cdl_bytes) & 0x0FFF),
-            cdl_bytes,
-            0xF000 | (len(apl_bytes) & 0x0FFF),
-            apl_bytes,
-            )
+                    0xF000 | (len(cdl_bytes) & 0x0FFF),
+                    cdl_bytes,
+                    0xF000 | (len(apl_bytes) & 0x0FFF),
+                    apl_bytes,
+                    )
 
 ######################################################################
+
+
 class application_loop_item(DVBobject):
 
     def pack(self):
-    
+
         # pack application_descriptors_loop
-        adl_bytes = string.join(
-            map(lambda x: x.pack(),
-                self.application_descriptors_loop),
-            "")
+        adl_bytes = b"".join(
+            [x.pack() for x in self.application_descriptors_loop])
 
         fmt = "!LHBH%ds" % len(adl_bytes)
         return pack(fmt,

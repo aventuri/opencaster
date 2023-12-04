@@ -1,7 +1,7 @@
 # This file is part of the dvbobjects library.
-# 
+#
 # Copyright 2000-2001, GMD, Sankt Augustin
-# -- German National Research Center for Information Technology 
+# -- German National Research Center for Information Technology
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,9 +17,9 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
 
-from Message import ServiceGatewayMessage, DirectoryMessage, FileMessage, StreamEventMessage
-from Message import ServiceGatewayInfo
-from Tap import delivery_para_tap, object_tap
-from Binding import ContextBinding, ObjectFileBinding, ObjectStreamEventBinding
-from ModuleInfo import ModuleInfo
-import IOP
+from .Message import ServiceGatewayMessage, DirectoryMessage, FileMessage, StreamEventMessage
+from .Message import ServiceGatewayInfo
+from .Tap import delivery_para_tap, object_tap
+from .Binding import ContextBinding, ObjectFileBinding, ObjectStreamEventBinding
+from .ModuleInfo import ModuleInfo
+from . import IOP
