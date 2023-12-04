@@ -1,8 +1,8 @@
 #! /usr/bin/env python
 
 # This file is part of the dvbobjects library.
-# 
-# Copyright © 2009-2013 Lorenzo Pallara l.pallara@avalpa.com
+#
+# Copyright (C) 2009-2013 Lorenzo Pallara l.pallara@avalpa.com
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -20,9 +20,11 @@
 
 from numpy import *
 
-ham84 = array([0x15, 0x02, 0x49, 0x5E, 0x64, 0x73, 0x38, 0x2F, 0xD0, 0xC7, 0x8C, 0x9B, 0xA1, 0xB6, 0xFD, 0xEA ])
+ham84 = array([0x15, 0x02, 0x49, 0x5E, 0x64, 0x73, 0x38, 0x2F,
+              0xD0, 0xC7, 0x8C, 0x9B, 0xA1, 0xB6, 0xFD, 0xEA])
+
 
 def hamming84(nibble):
-	
-	nibble = nibble & 0xF
-	return ham84[nibble]
+
+    nibble = nibble & 0xF
+    return ham84[nibble]

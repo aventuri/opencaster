@@ -4,9 +4,12 @@ def CRC_32(data):
 
     return 0xFFFFFFFF
 
+
 try:
-    import _crc32
-    CRC_32 = _crc32.sectioncrc
+    import crcmod
+
+    CRC_32 = crcmod.predefined.mkPredefinedCrcFun('crc-32-mpeg')
+
 except ImportError:
-    print "### WRONG CRC32!!!"
+    print("### WRONG CRC32!!!")
     pass

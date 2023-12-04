@@ -1,9 +1,9 @@
 #! /usr/bin/env python
 
 # This file is part of the dvbobjects library.
-# 
+#
 # Copyright  2000-2001, GMD, Sankt Augustin
-# -- German National Research Center for Information Technology 
+# -- German National Research Center for Information Technology
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -22,6 +22,8 @@
 from dvbobjects.utils import *
 
 ######################################################################
+
+
 class Section(DVBobject):
     """The base class of many PSI/SI Sections.
 
@@ -53,7 +55,7 @@ class Section(DVBobject):
       - 'section_length'
 
       - 'crc_32'
-    
+
     Subclasses must implement a 'pack_section_body()' method.
     """
     section_max_size = 4096
@@ -71,25 +73,25 @@ class Section(DVBobject):
         assert 0 <= self.last_section_number <= 0xFF
 
     def pack(self):
-    
+
         body = self.pack_section_body()
-        
+
         self.section_length = (
             5                           # section header rest
             + len(body)                 # section body
             + 4                         # CRC32
-            )
+        )
         length_info_16 = (
             0xB000
-            | (self.section_syntax_indicator<<15)
+            | (self.section_syntax_indicator << 15)
             | (self.private_indicator << 14)
             | (self.section_length)
-            )
+        )
         version_info_8 = (
             0xC0
             | ((self.version_number & 0x01f) << 1)
             | (self.current_next_indicator)
-            )
+        )
 
         self.__sanity_check()
 
@@ -99,7 +101,7 @@ class Section(DVBobject):
                     self.table_id_extension,
                     version_info_8,
                     self.section_number,
-                    self.last_section_number,
+                    int(self.last_section_number),
                     ) + body
 
         return data + self.crc_32(data)
