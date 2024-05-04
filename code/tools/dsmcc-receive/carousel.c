@@ -32,6 +32,7 @@
 #include "dsmcc.h"
 #include "biop.h"
 #include "utils.h"
+#include "filter.h"
 
 
 int

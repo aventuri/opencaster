@@ -29,7 +29,7 @@ static char padding[184];
 static char ip_device[IFNAMSIZ];
 static char s[180];
 static const char *Id = "$Id: mpe.c 25 2011-10-13 15:35:18Z jfbcable $";
-const MPE_HEADER_LEN=12;
+const int MPE_HEADER_LEN=12;
 int tun_fd = -1;
 
 #ifdef IFF_TUN

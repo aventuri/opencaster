@@ -154,7 +154,9 @@ int main(int argc, char *argv[])
 	/* Start to process sections */
 	not_finished = 1;
 	if(stuff){
-		section_next = 1;
+		// this is bad code as it is used as a flag in the below while loop
+		// cast the 1 to pointer to allow compile with gcc-14
+		section_next = (unsigned char *) 1;
 	} else {
 		section_next = get_section(&section_size_next, fd_in);
 	}

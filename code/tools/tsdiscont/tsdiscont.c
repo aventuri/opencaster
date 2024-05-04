@@ -24,6 +24,7 @@
 #include <stdlib.h>
 #include <sys/types.h>
 #include <inttypes.h>
+#include <arpa/inet.h>
 
 #define TS_HEADER_SIZE 4
 #define TS_PACKET_SIZE 188
